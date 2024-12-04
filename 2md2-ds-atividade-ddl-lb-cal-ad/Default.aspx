@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <asp:AdRotator ID="AdRotator1" runat="server" />
+                        <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Config/Banners.xml" CssClass="w-100" />
                     </td>
                 </tr>
                 <tr>

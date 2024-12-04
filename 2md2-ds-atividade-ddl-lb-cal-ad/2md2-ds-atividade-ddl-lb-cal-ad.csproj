@@ -68,6 +68,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Banners\1.jpg" />
+    <Content Include="Banners\2.jpg" />
+    <Content Include="Banners\3.jpg" />
+    <Content Include="Config\Banners.xml" />
     <Content Include="Default.aspx" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
@@ -91,6 +95,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
