@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <asp:Label ID="lblMsgErro" runat="server" Text="[lblMsgErro]"></asp:Label>
+                        <asp:Label ID="lblMsgErro" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
