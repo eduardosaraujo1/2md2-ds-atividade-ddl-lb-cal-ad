@@ -22,10 +22,10 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
 
         private void evaluateDayLabel()
         {
-            // Obter dados
-            int index = ddlDays.SelectedIndex - 1; // Subtrai por 1 para contar com a opção padrão "Selecionar"
+            // Obter dados (subtrações por 1 para ignorar o valor padrão "Selecionar"
+            int index = ddlDays.SelectedIndex - 1;
             string text = ddlDays.Text;
-            int total = ddlDays.Items.Count;
+            int total = ddlDays.Items.Count - 1;
 
             // Se a opção selecionada for negativa, valor padrão provavelmente foi selecionado. Redefina valores dos labels
             if (index < 0)
