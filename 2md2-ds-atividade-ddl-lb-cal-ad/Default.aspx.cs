@@ -22,7 +22,7 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
 
         private void evaluateDayLabel()
         {
-            // Obter dados (subtrações por 1 para ignorar o valor padrão "Selecionar"
+            // Obter dados (subtrações por 1 para ignorar o valor padrão "Selecionar")
             int index = ddlDays.SelectedIndex - 1;
             string text = ddlDays.Text;
             int total = ddlDays.Items.Count - 1;
@@ -31,8 +31,8 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
             if (index < 0)
             {
                 posicaoListaDias.Text = "N/A";
-                posicaoListaMeses.Text = "N/A";
                 textoSelecionadoDias.Text = "N/A";
+                totalItensDias.Text = "N/A";
                 return;
             }
 
@@ -52,8 +52,8 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
             // Posição do mês é negativa quando uma falta de seleção ocorre
             if (index < 0)
             {
+                posicaoListaMeses.Text = "N/A";
                 textoSelecionadoMeses.Text = "N/A";
-                totalItensDias.Text = "N/A";
                 totalItensMeses.Text = "N/A";
                 return;
             }
@@ -62,12 +62,6 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
             posicaoListaMeses.Text = index.ToString();
             textoSelecionadoMeses.Text = text;
             totalItensMeses.Text = total.ToString();
-        }
-
-        private void refreshDisplay()
-        {
-            evaluateMonthLabel();
-            evaluateDayLabel();
         }
 
         protected void add_Click(object sender, EventArgs e)
@@ -114,7 +108,8 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
                 }
 
                 // Reavaliar quais são os valores dos labels
-                refreshDisplay();
+                evaluateMonthLabel();
+                evaluateDayLabel();
             } catch (Exception error)
             {
                 handleError(error.Message);
@@ -133,7 +128,8 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
                 lbMonths.Items.Clear();
 
                 // Redefinir labels
-                refreshDisplay();
+                evaluateMonthLabel();
+                evaluateDayLabel();
             }
             catch (Exception error)
             {
@@ -153,7 +149,8 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
                 lbMonths.SelectedIndex = -1;
 
                 // Atualizar exibição de dados
-                refreshDisplay();
+                evaluateMonthLabel();
+                evaluateDayLabel();
             }   
             catch (Exception error)
             {
