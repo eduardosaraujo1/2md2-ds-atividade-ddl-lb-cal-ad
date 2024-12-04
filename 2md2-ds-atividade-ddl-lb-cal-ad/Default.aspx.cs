@@ -100,12 +100,18 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
             try
             {
                 CultureInfo culture = new CultureInfo("pt-BR");
-                string day = calendar.SelectedDate.ToString("dd");
-                string month = calendar.SelectedDate.ToString("MMMM", culture);
+                // Obter o dia e o mês selecionado
+                ListItem day = ddlDays.SelectedItem;
+                ListItem month = lbMonths.SelectedItem;
 
-                // Não ocorrem falhar ao tentar remover um item não existente
-                ddlDays.Items.Remove(day);
+                // Remover mês, não ocorrem falhar se nenhum item estiver selecionado (eu acho)
                 lbMonths.Items.Remove(month);
+
+                // Ignorar se o item selecionado for "Selecionar"
+                if (ddlDays.SelectedItem.Value != "Selecionar")
+                {
+                    ddlDays.Items.Remove(day);
+                }
 
                 // Reavaliar quais são os valores dos labels
                 refreshDisplay();
@@ -139,13 +145,11 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
         {
             try
             {
-                // Limpar calendario
+                // Remover seleção calendario
                 calendar.SelectedDate = Convert.ToDateTime("01/01/0001");
 
-                // Remover seleção da lista de dias
+                // Remover seleções de listas
                 ddlDays.SelectedIndex = -1;
-
-                // Remover seleção da lista de meses
                 lbMonths.SelectedIndex = -1;
 
                 // Atualizar exibição de dados
@@ -162,7 +166,8 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
             try
             {
                 evaluateDayLabel();
-            } catch (Exception error)
+            }
+            catch (Exception error)
             {
                 handleError(error.Message);
             }
@@ -173,7 +178,8 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
             try
             {
                 evaluateMonthLabel();
-            } catch (Exception error)
+            }
+            catch (Exception error)
             {
                 handleError(error.Message);
             }
