@@ -10,6 +10,10 @@
     width: 100%;
 }
 
+.ad-banner {
+    width: clamp(256px, 50vw, 100%);
+}
+
 tr {
     text-align: center;
 }

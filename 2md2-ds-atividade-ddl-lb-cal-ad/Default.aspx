@@ -6,6 +6,11 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" href="style.css" />
+    <style type="text/css">
+        .auto-style1 {
+            height: 27px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -24,12 +29,12 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Config/Banners.xml" CssClass="w-100" />
+                        <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Config/Banners.xml" CssClass="ad-banner" />
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <asp:Calendar ID="Calendar1" runat="server" CssClass="m-auto"></asp:Calendar>
+                        <asp:Calendar ID="calendar" runat="server" CssClass="m-auto"></asp:Calendar>
                     </td>
                 </tr>
                 <tr>
@@ -42,34 +47,34 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:DropDownList ID="days" runat="server">
+                        <asp:DropDownList ID="ddlDays" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlDays_SelectedIndexChanged">
                             <asp:ListItem Text="Selecionar"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td colspan="2">
-                        <asp:TextBox ID="months" runat="server" TextMode="MultiLine" OnTextChanged="months_TextChanged" style="height: 44px; width: 225px; margin-left: 0px"></asp:TextBox>
+                        <asp:ListBox ID="lbMonths" runat="server" Width="200px" AutoPostBack="True" OnSelectedIndexChanged="lbMonths_SelectedIndexChanged"></asp:ListBox>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <asp:Button ID="add" runat="server" Text="Adicionar" />
-                        <asp:Button ID="eliminate" runat="server" Text="Eliminar" />
-                        <asp:Button ID="resetList" runat="server" Text="Limpar toda a lista" />
-                        <asp:Button ID="reset" runat="server" Text="Limpar" />
+                        <asp:Button ID="add" runat="server" Text="Adicionar" OnClick="add_Click" />
+                        <asp:Button ID="eliminate" runat="server" Text="Eliminar" OnClick="eliminate_Click" />
+                        <asp:Button ID="resetList" runat="server" Text="Limpar toda a lista" OnClick="resetList_Click" />
+                        <asp:Button ID="reset" runat="server" Text="Limpar" OnClick="reset_Click" />
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="auto-style1">
                         Posição na lista (DIAS):
                     </td>
-                    <td>
-                        <b><asp:Label ID="posicaoListaDias" runat="server" Text="[lblPosicaoListaDias]"></asp:Label></b>
+                    <td class="auto-style1">
+                        <b><asp:Label ID="posicaoListaDias" runat="server" Text="N/A"></asp:Label></b>
                     </td>
-                    <td>
+                    <td class="auto-style1">
                         Posição na lista (MESES):
                     </td>
-                    <td>
-                        <b><asp:Label ID="posicaoListaMeses" runat="server" Text="[lblPosicaoListaMeses]"></asp:Label></b>
+                    <td class="auto-style1">
+                        <b><asp:Label ID="posicaoListaMeses" runat="server" Text="N/A"></asp:Label></b>
                     </td>
                 </tr>
                 <tr>
@@ -77,13 +82,13 @@
                         Texto selecionado (DIAS):
                     </td>
                     <td>
-                        <b><asp:Label ID="textoSelecionadoDias" runat="server" Text="[lblTextoSelecionadoDias]"></asp:Label></b>
+                        <b><asp:Label ID="textoSelecionadoDias" runat="server" Text="N/A"></asp:Label></b>
                     </td>
                     <td>
                         Texto selecionado (MESES):
                     </td>
                     <td>
-                        <b><asp:Label ID="textoSelecionadoMeses" runat="server" Text="[lblTextoSelecionadoMeses]"></asp:Label></b>
+                        <b><asp:Label ID="textoSelecionadoMeses" runat="server" Text="N/A"></asp:Label></b>
                     </td>
                 </tr>
                 <tr>
@@ -91,13 +96,13 @@
                         Total de Itens (DIAS):
                     </td>
                     <td>
-                        <b><asp:Label ID="totalItensDias" runat="server" Text="[lblTotalItensDias]"></asp:Label></b>
+                        <b><asp:Label ID="totalItensDias" runat="server" Text="N/A"></asp:Label></b>
                     </td>
                     <td>
                         Total de Itens (MESES):
                     </td>
                     <td>
-                        <b><asp:Label ID="totalItensMeses" runat="server" Text="[lblTotalItensMeses]"></asp:Label></b>
+                        <b><asp:Label ID="totalItensMeses" runat="server" Text="N/A"></asp:Label></b>
                     </td>
                 </tr>
             </tbody>

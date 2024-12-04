@@ -42,31 +42,31 @@ namespace _2md2_ds_atividade_ddl_lb_cal_ad
         protected global::System.Web.UI.WebControls.AdRotator AdRotator1;
 
         /// <summary>
-        /// Calendar1 control.
+        /// calendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.Calendar calendar;
 
         /// <summary>
-        /// days control.
+        /// ddlDays control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList days;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDays;
 
         /// <summary>
-        /// months control.
+        /// lbMonths control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox months;
+        protected global::System.Web.UI.WebControls.ListBox lbMonths;
 
         /// <summary>
         /// add control.
